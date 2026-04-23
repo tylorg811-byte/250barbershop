@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Royal Blend Barbershop | Premium Cuts & Grooming</title>
+  <meta name="description" content="Royal Blend Barbershop offers premium cuts, fades, beard grooming, and a modern barbershop experience." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0b0b0b;
+      color: #f5f5f5;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1150px, 92%);
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 95px 0;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.1rem, 4vw, 3.2rem);
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #bfbfbf;
+      max-width: 760px;
+      margin: 0 auto 52px;
+    }
+
+    .gold {
+      color: #c89b3c;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 999px;
+      font-weight: 600;
+      transition: 0.25s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: #c89b3c;
+      color: #111;
+      box-shadow: 0 10px 30px rgba(200,155,60,0.25);
+    }
+
+    .btn-primary:hover {
+      background: #d8aa45;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.16);
+    }
+
+    .btn-secondary:hover {
+      border-color: #c89b3c;
+      color: #c89b3c;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(11,11,11,0.76);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 78px;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+    }
+
+    .logo span {
+      color: #c89b3c;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+
+    .nav-links a {
+      color: #e7e7e7;
+      font-size: 0.96rem;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #c89b3c;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 100px;
+      background:
+        linear-gradient(rgba(0,0,0,0.58), rgba(0,0,0,0.76)),
+        url('https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(200,155,60,0.12), transparent 35%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      color: #dadada;
+      font-size: 0.84rem;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 6vw, 5.4rem);
+      line-height: 1.02;
+      margin-bottom: 18px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero p {
+      font-size: 1.08rem;
+      max-width: 620px;
+      color: #d0d0d0;
+      margin-bottom: 34px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .stat-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 16px 22px;
+      min-width: 160px;
+    }
+
+    .stat-card strong {
+      display: block;
+      font-size: 1.15rem;
+      color: #fff;
+    }
+
+    .stat-card span {
+      color: #bdbdbd;
+      font-size: 0.92rem;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .about-image img {
+      border-radius: 26px;
+      min-height: 500px;
+      object-fit: cover;
+      box-shadow: 0 18px 50px rgba(0,0,0,0.3);
+    }
+
+    .about-content {
+      background: #141414;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 26px;
+      padding: 38px;
+      box-shadow: 0 18px 50px rgba(0,0,0,0.22);
+    }
+
+    .about-content h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    .about-content p {
+      color: #c8c8c8;
+      margin-bottom: 16px;
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: #d8d8d8;
+    }
+
+    .feature-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: rgba(200,155,60,0.14);
+      color: #c89b3c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.92rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      background: linear-gradient(180deg, #151515 0%, #101010 100%);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 24px;
+      padding: 28px;
+      transition: 0.25s ease;
+      min-height: 100%;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(200,155,60,0.45);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.22);
+    }
+
+    .service-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .service-card p {
+      color: #bcbcbc;
+      margin-bottom: 16px;
+      font-size: 0.96rem;
+    }
+
+    .price {
+      color: #c89b3c;
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 290px;
+      object-fit: cover;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: 0.25s ease;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.02);
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .testimonial-card {
+      background: #141414;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 24px;
+      padding: 28px;
+    }
+
+    .stars {
+      color: #c89b3c;
+      margin-bottom: 14px;
+      letter-spacing: 2px;
+      font-size: 0.95rem;
+    }
+
+    .testimonial-card p {
+      color: #d0d0d0;
+      margin-bottom: 16px;
+    }
+
+    .testimonial-card strong {
+      color: #fff;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .info-card {
+      background: #141414;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 24px;
+      padding: 32px;
+    }
+
+    .info-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 18px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .hours-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      color: #d6d6d6;
+    }
+
+    .contact-lines {
+      display: grid;
+      gap: 14px;
+      color: #d6d6d6;
+      margin-bottom: 24px;
+    }
+
+    .contact-lines strong {
+      color: #fff;
+    }
+
+    .cta {
+      padding: 95px 0;
+    }
+
+    .cta-box {
+      background:
+        linear-gradient(135deg, rgba(200,155,60,0.12), rgba(255,255,255,0.02)),
+        #131313;
+      border: 1px solid rgba(200,155,60,0.18);
+      border-radius: 30px;
+      padding: 52px 30px;
+      text-align: center;
+      max-width: 940px;
+      margin: 0 auto;
+      box-shadow: 0 22px 60px rgba(0,0,0,0.26);
+    }
+
+    .cta-box h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      margin-bottom: 14px;
+    }
+
+    .cta-box p {
+      color: #d0d0d0;
+      max-width: 700px;
+      margin: 0 auto 28px;
+    }
+
+    footer {
+      padding: 26px 0 34px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      color: #9f9f9f;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 1050px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+
+      .about-grid,
+      .info-grid,
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-image img {
+        min-height: 320px;
+      }
+
+      .gallery-grid img {
+        height: 260px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-buttons,
+      .hero-stats {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .about-content,
+      .service-card,
+      .testimonial-card,
+      .info-card,
+      .cta-box {
+        padding: 24px;
+      }
+
+      .section {
+        padding: 72px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <a href="#" class="logo">Royal <span>Blend</span></a>
+
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a href="#contact" class="btn btn-secondary">Book Now</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="eyebrow">Premium Barber Experience</div>
+        <h1>More Than a Haircut — It’s a <span class="gold">Statement</span></h1>
+        <p>
+          Royal Blend Barbershop delivers sharp fades, clean beard work, and a polished experience in a modern shop built for men who take pride in how they show up.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-primary">Book Appointment</a>
+          <a href="#services" class="btn btn-secondary">Explore Services</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-card">
+            <strong>500+</strong>
+            <span>Fresh cuts delivered</span>
+          </div>
+          <div class="stat-card">
+            <strong>5-Star</strong>
+            <span>Client experience focus</span>
+          </div>
+          <div class="stat-card">
+            <strong>6 Days</strong>
+            <span>Open every week</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">Built for Consistency, Style & Confidence</h2>
+      <p class="section-subtitle">
+        This sample is designed to feel like a real, established barber brand — the kind of site that instantly builds trust and gets people to book.
+      </p>
+
+      <div class="about-grid">
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1200&q=80" alt="Barber working on a clean fade">
+        </div>
+
+        <div class="about-content">
+          <h3>Where modern style meets classic service</h3>
+          <p>
+            Royal Blend is the kind of shop clients come back to because the experience feels just as good as the cut. Clean design, reliable service, and attention to detail are what set it apart.
+          </p>
+          <p>
+            This $250-style sample gives a barber business a more polished online presence with stronger branding, more content sections, and a more established feel than a basic one-page starter site.
+          </p>
+
+          <div class="feature-list">
+            <div class="feature-item">
+              <div class="feature-icon">✓</div>
+              <div>Premium visual branding and stronger first impression</div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">✓</div>
+              <div>Service breakdown that feels more professional and intentional</div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">✓</div>
+              <div>Gallery and testimonials to build trust and drive bookings</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="container">
+      <h2 class="section-title">Services That Keep You Looking Sharp</h2>
+      <p class="section-subtitle">
+        Clear service options make it easier for clients to know what to book and help the business look more established.
+      </p>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Signature Cut</h3>
+          <p>Precision haircut with full styling and finishing detail.</p>
+          <div class="price">$35</div>
+        </div>
+
+        <div class="service-card">
+          <h3>Fade + Lineup</h3>
+          <p>Crisp fade work with a sharp lineup and clean finish.</p>
+          <div class="price">$45</div>
+        </div>
+
+        <div class="service-card">
+          <h3>Cut + Beard Detail</h3>
+          <p>Haircut with beard shaping and cleanup for a complete look.</p>
+          <div class="price">$55</div>
+        </div>
+
+        <div class="service-card">
+          <h3>Kids Cut</h3>
+          <p>Clean and age-appropriate cuts done with patience and care.</p>
+          <div class="price">$25</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="gallery">
+    <div class="container">
+      <h2 class="section-title">Recent Work</h2>
+      <p class="section-subtitle">
+        A gallery section instantly makes the barber look more credible and gives potential clients a reason to trust the work.
+      </p>
+
+      <div class="gallery-grid">
+        <img src="https://images.unsplash.com/photo-1512690459411-b0fd1c86b8a8?auto=format&fit=crop&w=900&q=80" alt="Barber haircut style example">
+        <img src="https://images.unsplash.com/photo-1622287162716-f311baa1a2b8?auto=format&fit=crop&w=900&q=80" alt="Fresh fade example">
+        <img src="https://images.unsplash.com/photo-1622296089863-eb7fc530daa8?auto=format&fit=crop&w=900&q=80" alt="Professional barber service result">
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="reviews">
+    <div class="container">
+      <h2 class="section-title">What Clients Are Saying</h2>
+      <p class="section-subtitle">
+        Testimonials help the business feel real, established, and worth booking.
+      </p>
+
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>
+            Best cut I’ve had in a long time. Clean fade, professional atmosphere, and easy booking. Definitely coming back.
+          </p>
+          <strong>— Marcus T.</strong>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>
+            The attention to detail here is different. Everything from the lineup to the beard work was on point.
+          </p>
+          <strong>— Jalen R.</strong>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>
+            Shop looks great, service is consistent, and the whole experience feels premium. Highly recommend.
+          </p>
+          <strong>— Chris D.</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container">
+      <h2 class="section-title">Hours & Booking</h2>
+      <p class="section-subtitle">
+        Make it easy for clients to contact the shop, know when you’re open, and take the next step.
+      </p>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>Business Hours</h3>
+          <div class="hours-list">
+            <div class="hours-row"><span>Monday</span><span>9:00 AM – 6:00 PM</span></div>
+            <div class="hours-row"><span>Tuesday</span><span>9:00 AM – 6:00 PM</span></div>
+            <div class="hours-row"><span>Wednesday</span><span>9:00 AM – 6:00 PM</span></div>
+            <div class="hours-row"><span>Thursday</span><span>9:00 AM – 7:00 PM</span></div>
+            <div class="hours-row"><span>Friday</span><span>9:00 AM – 7:00 PM</span></div>
+            <div class="hours-row"><span>Saturday</span><span>10:00 AM – 5:00 PM</span></div>
+            <div class="hours-row"><span>Sunday</span><span>Closed</span></div>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <h3>Get in Touch</h3>
+          <div class="contact-lines">
+            <div><strong>Phone:</strong> (555) 321-9876</div>
+            <div><strong>Email:</strong> hello@royalblendbarbers.com</div>
+            <div><strong>Address:</strong> 245 Main Street, Tampa, FL</div>
+          </div>
+          <p style="color:#bebebe; margin-bottom: 20px;">
+            This button can connect to Booksy, Square Appointments, Fresha, Vagaro, or any booking platform the barber uses.
+          </p>
+          <a href="#" class="btn btn-primary">Book Your Appointment</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <div class="cta-box">
+        <h2>Ready for a better barber brand online?</h2>
+        <p>
+          This upgraded sample shows clients the difference between a basic starter site and a more polished business presence that builds trust, showcases work, and drives bookings.
+        </p>
+        <a href="#contact" class="btn btn-primary">Start Your Booking Experience</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      © 2026 Royal Blend Barbershop. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
